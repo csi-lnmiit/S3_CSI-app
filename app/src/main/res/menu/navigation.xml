@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_about_us"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/title_about_us" />
+    <item
+        android:id="@+id/navigation_events"
+        android:icon="@drawable/ic_event_black_24dp"
+        android:title="@string/title_events"/>
+    <item
+        android:id="@+id/navigation_council"
+        android:icon="@drawable/ic_council_black_24dp"
+        android:title="@string/title_council" />
+
+    <item
+        android:id="@+id/navigation_contact_us"
+        android:icon="@drawable/ic_contact_us_black_24dp"
+        android:title="@string/title_contact_us" />
+
+    <item
+        android:id="@+id/navigation_csi_india"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_csi_india" />
+
+</menu>
