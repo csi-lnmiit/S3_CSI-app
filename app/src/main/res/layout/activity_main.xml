@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.android.csilnmiit.MainActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/content"

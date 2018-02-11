@@ -5,13 +5,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    Toolbar toolbar;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -35,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_csi_india:
                     transaction.replace(R.id.content,new CSIIndiaFragment()).commit();
                     return true;
+                default:
+                    transaction.replace(R.id.content,new AboutUsFragment()).commit();
+
             }
             return false;
         }
@@ -45,10 +52,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+         setSupportActionBar(toolbar);
+         getSupportActionBar().setDisplayShowTitleEnabled(true);
+         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setTitle("CSI-LNMIIT");
+
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        changeFragment(new AboutUsFragment());
     }
 
     /***
@@ -57,8 +70,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void explore(View view){
 
-        Uri webpage = Uri.parse("https://www.csi-india.org");
+        Uri webpage = Uri.parse("http://www.csi-india.org");
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+       // Toast.makeText(this, "explore", Toast.LENGTH_SHORT).show();
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
@@ -91,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     /***
      *
-     * should open csi lnmiit weeb page but not working
+     * should open csi lnmiit web page but not working
      */
     public void CSIWeb(View view){
         Uri webpage = Uri.parse("http://csi.lnmiit.ac.in");
@@ -99,5 +113,11 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+    }
+    private void changeFragment(Fragment fm){
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.content, fm);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
     }
 }

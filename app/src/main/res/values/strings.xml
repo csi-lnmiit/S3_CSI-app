@@ -18,7 +18,7 @@
     <string name="csi_email"><u>csilnmiitcouncil@gmail.com</u></string>
 
     <!-- For about us fragment -->
-    <string name="about_csi">Computer Society of India Student Chapter at the LNM Institute of Information Technology, Jaipur was established in March 2013 under guidance of Asst. Prof. Vikas Bajpai. CSI student chapter of LNMIIT is a open forum that helps students through various programs like quizzes, talks, discussions, workshops and other events.</string>
-
+    <string name="about_csi_1"><b>Computer Society of India</b> Student Chapter at the LNM Institute of Information Technology, Jaipur was established in March 2013 under guidance of Asst. Prof. <b>Vikas Bajpai</b>. CSI student chapter of LNMIIT is a open forum that helps students through various programs like quizzes, talks, discussions, workshops and other events.</string>
+    <string name="about_csi_2">Recently CSI Student Chapter, LNMIIT is awarded with <b><i>Best Accredited Student Branch Award</i></b> 2016-17 IN THE RECOGNITION OF SIGNIFICANT CONTRIBUTION TO CSI ACTIVITIES</string>
 
 </resources>
